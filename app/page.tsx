@@ -1,106 +1,239 @@
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
+    <main style={{ fontFamily: "'Georgia', serif", background: "#FEEEE5", minHeight: "100vh" }}>
 
       {/* Navbar */}
-      <nav className="flex justify-between items-center px-8 py-5 border-b border-gray-100">
-        <span className="text-xl font-semibold text-green-600">FinPath</span>
-        <button className="bg-green-600 text-white px-5 py-2 rounded-full text-sm">
-          Start your journey
+      <nav style={{
+        display: "flex", justifyContent: "space-between", alignItems: "center",
+        padding: "20px 40px", background: "rgba(254,238,229,0.85)",
+        backdropFilter: "blur(12px)", position: "sticky", top: 0, zIndex: 50,
+        borderBottom: "1px solid rgba(232,187,182,0.3)"
+      }}>
+        <span style={{ fontSize: "22px", fontWeight: "700", color: "#5A4452", letterSpacing: "-0.5px" }}>
+          Fin<span style={{ color: "#E8BBB6" }}>Path</span>
+        </span>
+        <button style={{
+          background: "#5A4452", color: "#FEEEE5", padding: "10px 24px",
+          borderRadius: "50px", border: "none", fontSize: "14px",
+          fontFamily: "Georgia, serif", cursor: "pointer", letterSpacing: "0.3px"
+        }}>
+          Start your journey →
         </button>
       </nav>
 
-      {/* Hero Section */}
-      <section className="flex flex-col items-center text-center px-6 pt-20 pb-16">
-        <span className="bg-green-50 text-green-700 text-sm px-4 py-1 rounded-full mb-6">
-          Made for beginners in India
-        </span>
-        <h1 className="text-4xl font-bold text-gray-900 max-w-2xl leading-tight mb-4">
-          You are not less than anyone. You are better because you know how to learn and grow.
+      {/* Hero */}
+      <section style={{
+        textAlign: "center", padding: "80px 24px 60px",
+        background: "linear-gradient(180deg, #FEEEE5 0%, #fdf6f3 100%)"
+      }}>
+        <div style={{
+          display: "inline-block", background: "rgba(200,208,207,0.35)",
+          color: "#5A4452", fontSize: "13px", padding: "6px 18px",
+          borderRadius: "50px", marginBottom: "28px", letterSpacing: "0.5px"
+        }}>
+          for every beginner in India ✦
+        </div>
+
+        <h1 style={{
+          fontSize: "clamp(32px, 5vw, 56px)", fontWeight: "700",
+          color: "#5A4452", maxWidth: "700px", margin: "0 auto 20px",
+          lineHeight: "1.2", letterSpacing: "-1px"
+        }}>
+          The future depends on<br />
+          <span style={{ color: "#A7AFC2", fontStyle: "italic" }}>what you do today.</span>
         </h1>
-        <p className="text-gray-500 text-lg max-w-xl mb-8">
-          FinPath shows you exactly what to do with your money — step by step, 
-          no jargon, no confusion. Built for people who are starting from zero.
+
+        <p style={{
+          color: "#8a7178", fontSize: "18px", maxWidth: "500px",
+          margin: "0 auto 40px", lineHeight: "1.7", fontFamily: "Georgia, serif"
+        }}>
+          You don't need to know everything about finance.
+          You just need someone to walk beside you —
+          one small step at a time.
         </p>
-        <button className="bg-green-600 text-white px-8 py-3 rounded-full text-base font-medium hover:bg-green-700 transition-colors">
-          Show me where to start
-        </button>
+
+        <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
+          <button style={{
+            background: "#5A4452", color: "#FEEEE5", padding: "14px 32px",
+            borderRadius: "50px", border: "none", fontSize: "16px",
+            fontFamily: "Georgia, serif", cursor: "pointer"
+          }}>
+            Show me where to start
+          </button>
+          <button style={{
+            background: "transparent", color: "#5A4452", padding: "14px 32px",
+            borderRadius: "50px", border: "1.5px solid #E8BBB6", fontSize: "16px",
+            fontFamily: "Georgia, serif", cursor: "pointer"
+          }}>
+            How does this work?
+          </button>
+        </div>
+
+        {/* Soft trust note */}
+        <p style={{ marginTop: "20px", color: "#b8a4aa", fontSize: "13px" }}>
+          Free • No sign up needed • No jargon
+        </p>
       </section>
 
-      {/* Steps Section */}
-      <section className="bg-gray-50 px-6 py-16">
-        <h2 className="text-center text-2xl font-bold text-gray-900 mb-2">
-          Your path to financial confidence
-        </h2>
-        <p className="text-center text-gray-500 mb-12">
-          Three steps. In this exact order. Nothing skipped.
+      {/* Feeling section */}
+      <section style={{ padding: "60px 24px", maxWidth: "680px", margin: "0 auto", textAlign: "center" }}>
+        <p style={{
+          fontSize: "22px", color: "#5A4452", lineHeight: "1.8",
+          fontStyle: "italic", fontFamily: "Georgia, serif"
+        }}>
+          "You open Groww. You see 47 options. You close the app.
+          You tell yourself you'll figure it out later."
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <p style={{ marginTop: "16px", color: "#8a7178", fontSize: "16px", lineHeight: "1.7" }}>
+          We know that feeling. FinPath exists so that never happens again.
+        </p>
+      </section>
 
-          <div className="bg-white rounded-2xl p-8 border border-gray-100">
-            <div className="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center text-green-600 font-bold mb-4">
-              1
-            </div>
-            <h3 className="font-semibold text-gray-900 mb-3 text-lg">Protect yourself first</h3>
-            <p className="text-gray-500 text-sm leading-relaxed">
-              Before investing a single rupee, make sure one hospital visit 
-              cannot wipe out everything you have saved. Health insurance comes first.
-            </p>
-          </div>
+      {/* Steps — warm cards */}
+      <section style={{ background: "#fdf6f3", padding: "60px 24px" }}>
+        <h2 style={{
+          textAlign: "center", fontSize: "28px", color: "#5A4452",
+          marginBottom: "8px", fontWeight: "700"
+        }}>
+          Your path, in the right order
+        </h2>
+        <p style={{
+          textAlign: "center", color: "#8a7178", marginBottom: "48px", fontSize: "16px"
+        }}>
+          Three steps. We explain each one like a friend would.
+        </p>
 
-          <div className="bg-white rounded-2xl p-8 border border-gray-100">
-            <div className="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center text-green-600 font-bold mb-4">
-              2
-            </div>
-            <h3 className="font-semibold text-gray-900 mb-3 text-lg">Build your safety net</h3>
-            <p className="text-gray-500 text-sm leading-relaxed">
-              Set aside 3 to 6 months of expenses somewhere safe and easy to access. 
-              This is your emergency fund — your financial cushion.
-            </p>
-          </div>
+        <div style={{
+          display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+          gap: "20px", maxWidth: "900px", margin: "0 auto"
+        }}>
 
-          <div className="bg-white rounded-2xl p-8 border border-gray-100">
-            <div className="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center text-green-600 font-bold mb-4">
-              3
+          {[
+            {
+              num: "01", color: "#C8D0CF", textColor: "#3d5654",
+              title: "Protect yourself first",
+              body: "Before a single rupee is invested, we make sure one unexpected hospital visit cannot take everything away from you. This is the step nobody talks about — but it changes everything.",
+              note: "Health insurance • Term insurance"
+            },
+            {
+              num: "02", color: "#E8BBB6", textColor: "#6b3a35",
+              title: "Build your safety cushion",
+              body: "Life surprises everyone. We help you set aside a small fund — just 3 to 6 months of expenses — so you never have to panic. This is your financial calm.",
+              note: "Emergency fund • Liquid savings"
+            },
+            {
+              num: "03", color: "#A7AFC2", textColor: "#2e3650",
+              title: "Now, start investing",
+              body: "You are ready. We tell you exactly which app to open, what to tap, and how much to start with. No guessing. No shame. Just your first ₹500 working for your future.",
+              note: "SIP • Index funds • Groww / Zerodha"
+            }
+          ].map((step) => (
+            <div key={step.num} style={{
+              background: "white", borderRadius: "20px", padding: "32px",
+              border: `1.5px solid ${step.color}40`,
+              boxShadow: "0 4px 24px rgba(90,68,82,0.06)"
+            }}>
+              <div style={{
+                display: "inline-block", background: step.color + "40",
+                color: step.textColor, fontWeight: "700", fontSize: "13px",
+                padding: "4px 12px", borderRadius: "50px", marginBottom: "16px",
+                letterSpacing: "1px"
+              }}>
+                {step.num}
+              </div>
+              <h3 style={{ fontSize: "18px", color: "#5A4452", marginBottom: "12px", fontWeight: "700" }}>
+                {step.title}
+              </h3>
+              <p style={{ color: "#8a7178", fontSize: "15px", lineHeight: "1.7", marginBottom: "16px" }}>
+                {step.body}
+              </p>
+              <p style={{ color: step.textColor, fontSize: "12px", letterSpacing: "0.5px", opacity: 0.7 }}>
+                {step.note}
+              </p>
             </div>
-            <h3 className="font-semibold text-gray-900 mb-3 text-lg">Start investing</h3>
-            <p className="text-gray-500 text-sm leading-relaxed">
-              Now you are ready. We will show you exactly which app to open, 
-              what to click, and how much to start with. No guessing.
-            </p>
-          </div>
+          ))}
 
         </div>
       </section>
 
-      {/* Reassurance Section */}
-      <section className="px-6 py-16 max-w-2xl mx-auto text-center">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">
-          Everyone starts somewhere
-        </h2>
-        <p className="text-gray-500 text-lg leading-relaxed">
-          You are 21. You have time on your side. The best financial decision 
-          you can make today is simply to start — even with ₹500 a month. 
-          FinPath will show you exactly how.
+      {/* Reassurance quote */}
+      <section style={{
+        padding: "80px 24px", textAlign: "center",
+        background: "linear-gradient(135deg, #5A4452 0%, #7a5a6a 100%)"
+      }}>
+        <p style={{
+          fontSize: "clamp(20px, 3vw, 32px)", color: "#FEEEE5",
+          maxWidth: "600px", margin: "0 auto 16px", lineHeight: "1.6",
+          fontStyle: "italic", fontFamily: "Georgia, serif"
+        }}>
+          "You are not behind. You are not less than anyone.
+          You are better — because you chose to learn."
         </p>
+        <p style={{ color: "#E8BBB6", fontSize: "14px", letterSpacing: "1px" }}>
+          — for every Krisha, starting today
+        </p>
+        <button style={{
+          marginTop: "36px", background: "#FEEEE5", color: "#5A4452",
+          padding: "14px 36px", borderRadius: "50px", border: "none",
+          fontSize: "16px", fontFamily: "Georgia, serif", cursor: "pointer"
+        }}>
+          Take your first step →
+        </button>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-green-600 px-6 py-16 text-center">
-        <h2 className="text-2xl font-bold text-white mb-4">
+      {/* How it feels different */}
+      <section style={{ padding: "70px 24px", maxWidth: "800px", margin: "0 auto" }}>
+        <h2 style={{
+          textAlign: "center", fontSize: "26px", color: "#5A4452",
+          marginBottom: "40px", fontWeight: "700"
+        }}>
+          What makes FinPath different
+        </h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "16px" }}>
+          {[
+            { icon: "💬", title: "Plain language always", body: "We never use a word we wouldn't say to a friend over chai." },
+            { icon: "🪜", title: "One step at a time", body: "No overwhelming lists. Just the next right thing for you, right now." },
+            { icon: "🤝", title: "No product pushing", body: "We don't earn from recommending funds. We just want you to win." },
+            { icon: "🌱", title: "Built for India", body: "UPI, Zerodha, Groww, SIP, PPF — real apps, real steps, real India." },
+          ].map((item) => (
+            <div key={item.title} style={{
+              background: "#FEEEE5", borderRadius: "16px", padding: "24px",
+              border: "1px solid #E8BBB620"
+            }}>
+              <div style={{ fontSize: "24px", marginBottom: "10px" }}>{item.icon}</div>
+              <h4 style={{ color: "#5A4452", fontWeight: "700", marginBottom: "8px", fontSize: "15px" }}>{item.title}</h4>
+              <p style={{ color: "#8a7178", fontSize: "14px", lineHeight: "1.6" }}>{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section style={{
+        background: "#C8D0CF", padding: "70px 24px", textAlign: "center"
+      }}>
+        <h2 style={{ fontSize: "28px", color: "#2e3a38", marginBottom: "12px", fontWeight: "700" }}>
           Ready to take your first step?
         </h2>
-        <p className="text-green-100 mb-8">
-          Answer 5 simple questions and we will show you exactly where to start.
+        <p style={{ color: "#4a5c5a", fontSize: "16px", marginBottom: "32px", lineHeight: "1.6" }}>
+          Answer 5 simple questions. We will show you exactly where to begin.<br />
+          No sign up. No email. Just your path.
         </p>
-        <button className="bg-white text-green-600 px-8 py-3 rounded-full font-medium hover:bg-green-50 transition-colors">
+        <button style={{
+          background: "#5A4452", color: "#FEEEE5", padding: "16px 40px",
+          borderRadius: "50px", border: "none", fontSize: "16px",
+          fontFamily: "Georgia, serif", cursor: "pointer"
+        }}>
           Start for free — takes 2 minutes
         </button>
       </section>
 
       {/* Footer */}
-      <footer className="text-center py-8 text-gray-400 text-sm">
-        FinPath — built for every person who just needs someone to show them the way.
+      <footer style={{
+        textAlign: "center", padding: "32px 24px",
+        background: "#FEEEE5", color: "#b8a4aa", fontSize: "13px"
+      }}>
+        FinPath — built with care, for every person who just needed someone to show them the way. 🌸
       </footer>
 
     </main>
