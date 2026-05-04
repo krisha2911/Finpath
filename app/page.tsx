@@ -1,4 +1,6 @@
+import Link from "next/link"
 export default function Home() {
+
   return (
     <main style={{ fontFamily: "'Georgia', serif", background: "#FEEEE5", minHeight: "100vh" }}>
 
@@ -12,6 +14,7 @@ export default function Home() {
         <span style={{ fontSize: "22px", fontWeight: "700", color: "#5A4452", letterSpacing: "-0.5px" }}>
           Fin<span style={{ color: "#E8BBB6" }}>Path</span>
         </span>
+        <Link href="/quiz">
         <button style={{
           background: "#5A4452", color: "#FEEEE5", padding: "10px 24px",
           borderRadius: "50px", border: "none", fontSize: "14px",
@@ -19,7 +22,8 @@ export default function Home() {
         }}>
           Start your journey →
         </button>
-      </nav>
+      </Link>
+    </nav>
 
       {/* Hero */}
       <section style={{
@@ -53,6 +57,7 @@ export default function Home() {
         </p>
 
         <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
+        <Link href="/quiz">
           <button style={{
             background: "#5A4452", color: "#FEEEE5", padding: "14px 32px",
             borderRadius: "50px", border: "none", fontSize: "16px",
@@ -60,14 +65,15 @@ export default function Home() {
           }}>
             Show me where to start
           </button>
-          <button style={{
-            background: "transparent", color: "#5A4452", padding: "14px 32px",
-            borderRadius: "50px", border: "1.5px solid #E8BBB6", fontSize: "16px",
-            fontFamily: "Georgia, serif", cursor: "pointer"
-          }}>
-            How does this work?
-          </button>
-        </div>
+        </Link>
+        <button style={{
+          background: "transparent", color: "#5A4452", padding: "14px 32px",
+          borderRadius: "50px", border: "1.5px solid #E8BBB6", fontSize: "16px",
+          fontFamily: "Georgia, serif", cursor: "pointer"
+        }}>
+          How does this work?
+        </button>
+      </div>
 
         {/* Soft trust note */}
         <p style={{ marginTop: "20px", color: "#b8a4aa", fontSize: "13px" }}>
